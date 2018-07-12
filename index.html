@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <!-- METATAGS -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cotiza Criptomonedas</title>
+    <!-- FONTS -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+    <!-- STYLES -->
+    <link rel="stylesheet" href="./css/materialize.min.css">
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+
+<body>
+    <div>
+        <h1 class="center">Cotiza Criptomonedas al Instante</h1>
+    </div>
+    <div class="container main-content">
+        <div class="row">
+            <!-- FORM -->
+            <form class="col s8 offset-s2" id="form">
+                <div class="row">
+                    <div class="quote-form">
+                        <div class="input-field col s12">
+                            <select id="coin">
+                                    <option value="" disabled selected>Elige tu Moneda </option>
+                                    <option value="USD">Dolar Estadounidense</option>
+                                    <option value="MXN">Peso Mexicano</option>
+                                    <option value="GBP">Libras</option>
+                                    <option value="EUR">Euros</option>
+                                </select>
+                            <label>Moneda</label>
+                        </div>
+                        <div class="input-field col s12">
+                            <select id="cryptocurrency">
+                                <option value="" disabled selected>Elige Criptomoneda</option>
+                            </select>
+                            <label>Criptomoneda</label>
+                        </div>
+                        <div class="input-field col s12">
+                            <button class="btn waves-effect waves-light orange darken-3" type="submit" name="action">Cotizar
+                                <i class="material-icons right">attach_money</i>
+                            </button>
+                        </div>
+                        <div class="messages col s12"></div>
+                        <div class="spinner"></div>
+                        <div id="result" class="col s12"></div>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <!--Import jQuery before materialize.js-->
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="js/materialize.min.js"></script>
+
+
+        <script src="js/cotizador.js"></script>
+        <script src="js/interfaz.js"></script>
+        <script src="js/app.js"></script>
+
+        <script>
+            (function() {
+                $(document).ready(function() {
+                    setTimeout(() => {
+                        $('select').select();
+                    }, 2000);
+
+                });
+            })(jQuery);
+        </script>
+</body>
+
+</html>
