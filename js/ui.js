@@ -43,9 +43,16 @@ class UI {
 
     // Imprime el resultado de la cotización
     showResult(result, coin) {
+        // En caso de que haya una consulta anterior, borrarla
+        const previousResult = document.querySelector('#result > div');
+        if(previousResult) {
+            previousResult.remove();
+        }
+        // Muestra el spinner
+        this.showSpinner();
         // Construir la etiqueta de precio según la moneda
         const value = result.data.quotes[coin];
-        
+        // Convierte la hora de UNIX  a horas y minutos
         const hour = new Date(result.data.last_updated * 1000);
         const updateHour = `${hour.getHours()}:${hour.getMinutes()}`;
         // Construir el template
@@ -63,6 +70,18 @@ class UI {
             </div>
         `;
 
-        document.querySelector('#result').innerHTML = templateHTML;
+        setTimeout(() => {
+            //Imprime el resultado
+            document.querySelector("#result").innerHTML = templateHTML;
+            // Oculta el spinner
+            document.querySelector('.spinner img').remove();
+        }, 2500);
+    }
+
+    // Muestra el spinner cuando se cotiza
+    showSpinner() {
+        const spinnerGIF = document.createElement('img');
+        spinnerGIF.src = 'img/spinner.gif';
+        document.querySelector(".spinner").appendChild(spinnerGIF);
     }
 }
