@@ -3,7 +3,7 @@
 ## Descripción
 
 Aplicación que permite cotizar el precio de decenas de criptomonedas en tiempo real.
-[Ir al sitio](https://FerGuevaraM95.github.io/products-app/)
+[Ir al sitio](https://FerGuevaraM95.github.io/cryptocurrency/)
 
 ## Instalación
 
