@@ -18,8 +18,13 @@ form.addEventListener('submit', (e) => {
 
     // Comprobar que ambos campos tengan datos
     if (coinSelected === '' || cryptocurrencySelected === '') {
-        console.log('Faltan datos');
+        ui.showMessage('Ambos campos son obligatorios', 'deep-orange darken-4 card-panel');
     } else {
-        console.log('Cotizar');
+        // Todo correcto tomar valores del select y ejecutar la cotización
+        quoting.getValues(coinSelected, cryptocurrencySelected)
+            .then(data => {
+                ui.showResult(data.result,
+                coinSelected);
+            })
     }
 })
