@@ -81,7 +81,7 @@ class UI {
     // Muestra el spinner cuando se cotiza
     showSpinner() {
         const spinnerGIF = document.createElement('img');
-        spinnerGIF.src = '../img/spinner.gif';
+        spinnerGIF.src = './img/spinner.gif';
         document.querySelector(".spinner").appendChild(spinnerGIF);
     }
 }
